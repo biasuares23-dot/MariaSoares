@@ -6,3 +6,4 @@ portas abertas
 comando ss -tuln
 captura de ecra
 ![porto-abertos](portos-abertos.png)
+Numero de portas abertas identificadas sao 9
