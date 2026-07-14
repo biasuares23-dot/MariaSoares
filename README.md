@@ -1,9 +1,15 @@
-Endereço ip
-comando ip a
-captura de ecra
+# Endereço ip
+comando:
+```bash
+ip a
+'''
+captura de ecra:
 ![Endereço IP](endereço%20ip.png)
-portas abertas
-comando ss -tuln
+##Portas abertas
+comando:
+'''bash
+ss -tuln
+'''
 captura de ecra
-![porto-abertos](portos-abertos.png)
+![portas abertas](portos-abertos.png)
 Numero de portas abertas identificadas sao 9
