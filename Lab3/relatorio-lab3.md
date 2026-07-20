@@ -10,4 +10,5 @@ Usei o comando ´sudo ufw status´ para fazer a verficaçao do estado do firewal
 ### Passo 2
 
 <img width="761" height="397" alt="image" src="https://github.com/user-attachments/assets/03a210aa-532b-4a4d-b507-48e29a587e48" />
+
 Usei configuraçao padrao de segurança bloqueando por padrao as requisiçoes de entradas e permitindo apenas as requisiçoes de saida
