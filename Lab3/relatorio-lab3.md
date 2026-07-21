@@ -40,7 +40,9 @@ Usei o comando sudo ufw status verbose depois de ativar o UFW que nao tinha feit
 O resultado mostrou que o firewall se encontra ativo:
  
 A política padrão é bloquear todas as ligações de entrada (deny incoming);
+
 Permite ligações de saída (allow outgoing) e
+
 Permite acesso SSH através da porta 22/TCP.
 
 A regra da porta 22/TCP foi mantida para garantir a administração remota segura do sistema, enquanto outros acessos de entrada permanecem bloqueados por padrão.
