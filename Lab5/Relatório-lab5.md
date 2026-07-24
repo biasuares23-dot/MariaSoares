@@ -7,7 +7,7 @@ Benchmarks)
 
 ### Execuçao dos comandos
 
-Executei o comando sudo apt update && sudo apt install lynis -y para atualizar a arvore de pacotes e instalar o lynis.
+Executei o comando `sudo apt update && sudo apt install lynis -y` para atualizar a arvore de pacotes e instalar o lynis.
 
 <img width="1308" height="860" alt="image" src="https://github.com/user-attachments/assets/7ef98fa5-d8bf-48c1-bc98-0a055d1f28e6" />
 
