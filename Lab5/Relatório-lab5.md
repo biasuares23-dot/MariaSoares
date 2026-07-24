@@ -42,7 +42,6 @@ O Lynis recomenda a instalação do Fail2ban para monitorizar tentativas de aute
 **Correção recomendada (Cisofy):**
 Instalar e configurar o Fail2ban para proteger os serviços expostos. Após a instalação, devem ser definidas regras para monitorizar os ficheiros de log e bloquear temporariamente os endereços IP que excedam o número permitido de tentativas de autenticação.
 
----
 
 2. Configure password hashing rounds in /etc/login.defs (AUTH-9230)
 
