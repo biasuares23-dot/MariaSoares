@@ -1,4 +1,4 @@
-# Laboratório — Sessão 5
+# Laboratório sessao - 5
 ## Análise de Vulnerabilidades em Linux e Ferramentas de Auditoria
 
 Execução de um exame de auditoria técnica automatizada para identificar desvios de
