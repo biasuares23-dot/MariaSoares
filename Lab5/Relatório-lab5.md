@@ -11,7 +11,7 @@ Executei o comando `sudo apt update && sudo apt install lynis -y` para atualizar
 
 <img width="1308" height="860" alt="image" src="https://github.com/user-attachments/assets/7ef98fa5-d8bf-48c1-bc98-0a055d1f28e6" />
 
-Executei o comando sudo lynis audit system para iniciar a auditoria completa do sistema operativo.
+Executei o comando `sudo lynis audit system` para iniciar a auditoria completa do sistema operativo.
 
 <img width="1285" height="818" alt="image" src="https://github.com/user-attachments/assets/11910ef7-9c92-48f0-a653-7c71c09fb757" />
 
