@@ -117,9 +117,8 @@ sudo ufw status verbose
 
 A ativação da firewall reduziu a superfície de ataque do servidor, permitindo apenas o acesso remoto por SSH.
 
-<img width="828" height="416" alt="image" src="https://github.com/user-attachments/assets/1f0af690-61a7-4aba-80af-ccbeb9792fc6" />
 
-> Inserir print do `sudo ufw status verbose`.
+<img width="828" height="262" alt="status verbose" src="https://github.com/user-attachments/assets/2ba5bf3b-7304-4245-957c-9cf27639ec9d" />
 
 ---
 
@@ -132,6 +131,7 @@ Verificou-se que:
 - `PasswordAuthentication` já se encontrava definida como **no**.
 - `PermitRootLogin` encontrava-se comentada, sendo necessária a sua revisão para cumprir as boas práticas de segurança.
 
+<img width="828" height="416" alt="629397554-1f0af690-61a7-4aba-80af-ccbeb9792fc6" src="https://github.com/user-attachments/assets/999fb5a8-7324-4edb-a8ff-38abd4d5087f" />
 
 
 
@@ -145,7 +145,9 @@ Verificou-se que:
 
 
 
-# Laboratório – Sessão 6
+
+
+
 
 
 
