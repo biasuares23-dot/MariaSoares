@@ -50,6 +50,8 @@ nmap -sV localhost
 
 O comando nmap -sV localhost não pôde ser executado porque a ferramenta não se encontrava instalada na máquina disponibilizada e a instalação não foi possível devido à indisponibilidade dos repositórios. A identificação inicial dos serviços foi realizada com o comando 'ss -tuln'.
 
+A configuração da firewall implementou uma política de "negação por defeito" (deny incoming), permitindo apenas o acesso remoto através da porta 22/TCP. Esta medida reduz significativamente a superfície de ataque do servidor.
+
 <img width="1030" height="750" alt="image" src="https://github.com/user-attachments/assets/e907be7e-73fd-44a4-93d9-89ebabce223d" />
 
 ---
@@ -84,11 +86,7 @@ cat ~/.ssh/authorized_keys
 
 ### Resultado
 
-Foram encontradas quatro chaves públicas autorizadas.
-
-**Análise**
-
-As chaves pertencem ao ambiente da TryHackMe e não foram identificados indícios de chaves suspeitas.
+O ficheiro authorized_keys continha quatro chaves públicas SSH autorizadas. Não foram identificados indícios de que estas chaves fossem maliciosas, sendo compatíveis com o ambiente da plataforma TryHackMe.
 
 <img width="927" height="532" alt="image" src="https://github.com/user-attachments/assets/14bf8bb1-d97f-4aa6-a093-12495ed85959" />
 
@@ -126,15 +124,25 @@ A ativação da firewall reduziu a superfície de ataque do servidor, permitindo
 
 ## Configuração do SSH
 
+Foi analisado o ficheiro `/etc/ssh/sshd_config`.
+
 Verificou-se que:
 
-- `PasswordAuthentication` já se encontrava definida como **no**.
-- `PermitRootLogin` encontrava-se comentada, sendo necessária a sua revisão para cumprir as boas práticas de segurança.
+- `PasswordAuthentication` já se encontrava configurado como `no`, impedindo a autenticação por palavra-passe.
+- A diretiva `PermitRootLogin` encontrava-se comentada (`#PermitRootLogin prohibit-password`), não tendo sido possível confirmar a alteração para `PermitRootLogin no` devido às limitações do ambiente do laboratório.
+
+Estas configurações seguem as boas práticas de hardening do serviço SSH, reduzindo o risco de acessos não autorizados.
 
 <img width="828" height="416" alt="629397554-1f0af690-61a7-4aba-80af-ccbeb9792fc6" src="https://github.com/user-attachments/assets/999fb5a8-7324-4edb-a8ff-38abd4d5087f" />
 
 
+## Conclusão
 
+Durante este laboratório foi efetuada uma auditoria inicial ao servidor Linux, identificando os serviços ativos, verificando a configuração das contas de utilizador e das chaves SSH autorizadas.
+
+Foram aplicadas medidas de contenção através da ativação da firewall UFW, limitando as ligações de entrada apenas ao serviço SSH. Foi ainda analisada a configuração do serviço SSH, verificando-se que a autenticação por palavra-passe já se encontrava desativada.
+
+Apesar das limitações do ambiente da máquina virtual, que impediram a utilização do Nmap e a conclusão de algumas alterações ao ficheiro `sshd_config`, foi possível aplicar e documentar as principais medidas de hardening previstas no laboratório.
 
 
 
