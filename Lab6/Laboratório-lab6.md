@@ -126,19 +126,19 @@ A regra de permissão da porta 22/TCP garantiu a continuidade do acesso administ
 
 **Verificação do login do utilizador root** 
 
-Comando executado
+### Comando executado
 'grep -n "PermitRootLogin" /etc/ssh/sshd_config'
 
 **Desativação da autenticação por palavra passe**
 
-Comando excutado
+### Comando executado
 'grep -n "PasswordAuthentication" /etc/ssh/sshd_config'
 
 O comando não apresentou uma configuração explícita de PasswordAuthentication no ficheiro principal. Foi necessário validar a configuração efetiva do serviço SSH para confirmar se a autenticação por palavra-passe estava realmente desativada.
 
 **Verificação da autenticação por chave pública**
 
-Comando executado
+### Comando executado
 'grep -n "PubkeyAuthentication" /etc/ssh/sshd_config'
 
 OBS.: A auditoria automática com Lynis não foi executada devido à indisponibilidade da ferramenta e limitações de rede do laboratório.
