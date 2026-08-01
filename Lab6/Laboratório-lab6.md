@@ -86,9 +86,9 @@ cat ~/.ssh/authorized_keys
 
 ### Resultado
 
-O ficheiro authorized_keys continha quatro chaves públicas SSH autorizadas. Não foram identificados indícios de que estas chaves fossem maliciosas, sendo compatíveis com o ambiente da plataforma TryHackMe.
+Foram identificadas múltiplas chaves públicas SSH autorizadas no ficheiro authorized_keys. A existência de chaves de utilizadores ou sistemas externos deve ser validada, removendo chaves antigas ou não autorizadas para reduzir risco de acesso persistente.
 
-<img width="927" height="532" alt="image" src="https://github.com/user-attachments/assets/14bf8bb1-d97f-4aa6-a093-12495ed85959" />
+<img width="920" height="497" alt="image" src="https://github.com/user-attachments/assets/e3800565-998c-44f4-82b6-400949ca6f26" />
 
 ---
 
@@ -115,6 +115,7 @@ sudo ufw status verbose
 
 A ativação da firewall reduziu a superfície de ataque do servidor, permitindo apenas o acesso remoto por SSH.
 
+<img width="973" height="358" alt="image" src="https://github.com/user-attachments/assets/447fe40c-515e-4a15-8cf2-656663f73ff9" />
 
 <img width="828" height="262" alt="status verbose" src="https://github.com/user-attachments/assets/2ba5bf3b-7304-4245-957c-9cf27639ec9d" />
 
@@ -134,6 +135,8 @@ Verificou-se que:
 Estas configurações seguem as boas práticas de hardening do serviço SSH, reduzindo o risco de acessos não autorizados.
 
 <img width="828" height="416" alt="629397554-1f0af690-61a7-4aba-80af-ccbeb9792fc6" src="https://github.com/user-attachments/assets/999fb5a8-7324-4edb-a8ff-38abd4d5087f" />
+
+<img width="957" height="313" alt="image" src="https://github.com/user-attachments/assets/140cc6c0-a803-4eb8-98bf-5adfb05fac71" />
 
 
 ## Conclusão
