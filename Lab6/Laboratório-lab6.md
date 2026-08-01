@@ -48,9 +48,7 @@ nmap -sV localhost
 
 ### Resultado
 
-O comando nmap -sV localhost não pôde ser executado porque a ferramenta não se encontrava instalada na máquina disponibilizada e a instalação não foi possível devido à indisponibilidade dos repositórios. Devido à impossibilidade de instalar o Nmap por indisponibilidade dos repositórios, a enumeração inicial dos serviços foi realizada através do comando ss -tuln, permitindo identificar os serviços ativos localmente.
-
-A configuração da firewall implementou uma política de "negação por defeito" (deny incoming), permitindo apenas o acesso remoto através da porta 22/TCP. Esta medida reduz significativamente a superfície de ataque do servidor.
+O comando nmap -sV localhost não pôde ser executado porque a ferramenta não se encontrava instalada na máquina disponibilizada. A instalação não foi possível devido à indisponibilidade dos repositórios do laboratório. Como alternativa, a enumeração inicial dos serviços foi realizada através do comando ss -tuln, permitindo identificar os serviços ativos localmente.
 
 <img width="1030" height="750" alt="image" src="https://github.com/user-attachments/assets/e907be7e-73fd-44a4-93d9-89ebabce223d" />
 
@@ -127,16 +125,19 @@ A regra de permissão da porta 22/TCP garantiu a continuidade do acesso administ
 # Fase 3 – Remediação
 
 **Verificação do login do utilizador root** 
+
 Comando executado
 'grep -n "PermitRootLogin" /etc/ssh/sshd_config'
 
 **Desativação da autenticação por palavra passe**
+
 Comando excutado
 'grep -n "PasswordAuthentication" /etc/ssh/sshd_config'
 
 O comando não apresentou uma configuração explícita de PasswordAuthentication no ficheiro principal. Foi necessário validar a configuração efetiva do serviço SSH para confirmar se a autenticação por palavra-passe estava realmente desativada.
 
 **Verificação da autenticação por chave pública**
+
 Comando executado
 'grep -n "PubkeyAuthentication" /etc/ssh/sshd_config'
 
@@ -145,6 +146,6 @@ OBS.: A auditoria automática com Lynis não foi executada devido à indisponibi
 <img width="913" height="423" alt="image" src="https://github.com/user-attachments/assets/aa366c26-f13b-451c-be77-3bed14028b24" />
 
 # Conclusão  
-A auditoria realizada permitiu identificar os serviços ativos, avaliar a exposição do servidor e aplicar medidas de endurecimento da configuração. A ativação da firewall UFW, a restrição das portas disponíveis e a análise da configuração SSH contribuíram para reduzir a superfície de ataque. Algumas ferramentas previstas no laboratório, como Nmap e Lynis, não puderam ser utilizadas devido às limitações do ambiente TryHackMe, tendo sido aplicados métodos alternativos de análise.
+A auditoria realizada permitiu identificar os serviços ativos, avaliar a exposição do servidor e aplicar medidas de endurecimento da configuração. A ativação da firewall UFW, a restrição das portas acessíveis e a análise da configuração SSH contribuíram para reduzir a superfície de ataque. Algumas ferramentas previstas no laboratório, como Nmap e Lynis, não puderam ser utilizadas devido às limitações do ambiente TryHackMe, tendo sido aplicados métodos alternativos de análise.
 
 
