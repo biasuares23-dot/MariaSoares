@@ -123,29 +123,25 @@ A ativação da firewall reduziu a superfície de ataque do servidor, permitindo
 
 # Fase 3 – Remediação
 
-## Configuração do SSH
+**Verificação do login do utilizador root** 
+Comando executado
+'grep -n "PermitRootLogin" /etc/ssh/sshd_config'
 
-Foi analisado o ficheiro `/etc/ssh/sshd_config`.
+**Desativação da autenticação por palavra passe**
+Comando excutado
+'grep -n "PasswordAuthentication" /etc/ssh/sshd_config'
 
-Verificou-se que:
+Foi confirmado que a autenticação por palavra-passe está desativada.
 
-- `PasswordAuthentication` já se encontrava configurado como `no`, impedindo a autenticação por palavra-passe.
-- A diretiva `PermitRootLogin` encontrava-se comentada (`#PermitRootLogin prohibit-password`), não tendo sido possível confirmar a alteração para `PermitRootLogin no` devido às limitações do ambiente do laboratório.
+Esta configuração aumenta a segurança do serviço SSH, pois impede ataques de força bruta baseados em passwords, obrigando a utilização de autenticação por chave SSH.
+**Verificação da autenticação por chave pública**
+Comando executado
+'grep -n "PubkeyAuthentication" /etc/ssh/sshd_config'
 
-Estas configurações seguem as boas práticas de hardening do serviço SSH, reduzindo o risco de acessos não autorizados.
+OBS.: A auditoria automática com Lynis não foi executada devido à indisponibilidade da ferramenta e limitações de rede do laboratório.
 
-<img width="828" height="416" alt="629397554-1f0af690-61a7-4aba-80af-ccbeb9792fc6" src="https://github.com/user-attachments/assets/999fb5a8-7324-4edb-a8ff-38abd4d5087f" />
+<img width="913" height="423" alt="image" src="https://github.com/user-attachments/assets/aa366c26-f13b-451c-be77-3bed14028b24" />
 
-<img width="957" height="313" alt="image" src="https://github.com/user-attachments/assets/140cc6c0-a803-4eb8-98bf-5adfb05fac71" />
-
-
-## Conclusão
-
-Durante este laboratório foi efetuada uma auditoria inicial ao servidor Linux, identificando os serviços ativos, verificando a configuração das contas de utilizador e das chaves SSH autorizadas.
-
-Foram aplicadas medidas de contenção através da ativação da firewall UFW, limitando as ligações de entrada apenas ao serviço SSH. Foi ainda analisada a configuração do serviço SSH, verificando-se que a autenticação por palavra-passe já se encontrava desativada.
-
-Apesar das limitações do ambiente da máquina virtual, que impediram a utilização do Nmap e a conclusão de algumas alterações ao ficheiro `sshd_config`, foi possível aplicar e documentar as principais medidas de hardening previstas no laboratório.
 
 
 
