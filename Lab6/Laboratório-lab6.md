@@ -72,7 +72,7 @@ O comando não apresentou qualquer utilizador.
 
 Não foram identificadas contas sem palavra-passe configurada.
 
-<img width="913" height="582" alt="image" src="https://github.com/user-attachments/assets/c9581e47-73a5-4d26-beb4-d7ffce13ce75" />
+<img width="915" height="250" alt="image" src="https://github.com/user-attachments/assets/e7f49bb6-7430-4b10-8fee-83b7493efb75" />
 
 ---
 
